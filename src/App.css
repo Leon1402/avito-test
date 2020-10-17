@@ -1,38 +1,124 @@
+* {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+}
 .App {
+  width: 100%;
+  height: 100vh;
+  background: #FFF;
+}
+.header {
   text-align: center;
+  padding-top: 15px;
+  margin-bottom: 30px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1 {
+  font-family: 'Roboto' 'Condensed';
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gallery {
+  margin: 0 auto;
+  height: 314px;
+  width: 728px;
+  display: grid;
+   grid-template-rows: 142px 142px;
+   grid-template-columns: 229px 229px 229px;
+   grid-template-areas: 
+   'p p p'
+   'p p p';
+   grid-row-gap: 30px;
+   grid-column-gap: 21px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image {
+  grid-area: 'p';
+  background: #C4C4C4;
+  cursor: pointer;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+}
+.modal-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.modal-item {
+  margin: auto;
+  width: 619px;
+  height: 425px;
+  background: #FFFFFF;
+  position: relative;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-image  {
+  display: flex;
+  margin: 30px;
+}
+img{
+  width: 331px;
+  height: 205px;
+  background:#C4C4C4;
+}
+.modal-comment {
+  margin-left: 14px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+.modal-comment .comment-date{
+  color: #999;
+  margin-bottom: 5px;
+}
+.modal-close {
+  cursor: pointer;
+  width: 25.46px;
+  width: 25.46px;
+}
+.modal-close::before, .modal-close::after {
+  content: "";
+  position: absolute;
+  width: 25.46px;
+  height: 0px;
+  right: 20px;
+  top: 20px;
+  border: 1px solid #000000;
+  transform: rotate(45deg);
+}
+.modal-close::after{
+  transform: rotate(-45deg);
+}
+.modal-newcoment {
+  margin: 29px;
+}
+.modal-newcoment input {
+  width: 332px;
+  height: 30px;
+  background: #FFF;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 3px; 
+  margin-bottom: 20px;
+  padding-left: 11px;
+}
+.modal-newcoment input::placeholder {
+  color: #CCC;
+}
+.modal-newcoment button {
+  width: 332px;
+  height: 30px;
+  background: #4997D0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #FFF;
 }
