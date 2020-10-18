@@ -1,0 +1,23 @@
+.gallery {
+    margin: 0 auto;
+    height: 314px;
+    width: 728px;
+    display: grid;
+     grid-template-rows: 142px 142px;
+     grid-template-columns: 229px 229px 229px;
+     grid-template-areas: 
+     'p p p'
+     'p p p';
+     grid-row-gap: 30px;
+     grid-column-gap: 21px;
+  }
+  .image {
+    grid-area: 'p';
+    background: #C4C4C4;
+    cursor: pointer;
+  }
+  .image img {
+    width: 100%;
+    height: 100%;
+  }
+  

@@ -5,12 +5,14 @@ import getImagesAPI from "../axios/axios";
 const SET_STATE = "SET_STATE";
 const SET_BIG_IMAGE = "SET_BIG_IMAGE";
 const CLOSE_BIG_IMAGE = "CLOSE_BIG_IMAGE";
-const ADD_NEW_COMMENT = "ADD_NEW_COMMENT"
-const NEW_COMMENT_TEXT_CHANGE = "NEW_COMMENT_TEXT_CHANGE"
+const ADD_NEW_COMMENT = "ADD_NEW_COMMENT";
+const NEW_COMMENT_TEXT_CHANGE = "NEW_COMMENT_TEXT_CHANGE";
+const NAME_TEXT_CHANGE = "NAME_TEXT_CHANGE";
 
 let initState = {
     isBigImageOpen: false,
-    newCommentText: ""
+    newCommentText: "",
+    nameText: ""
 }
 
 let ImagesReducer = (state = initState, action) => {
@@ -32,17 +34,25 @@ let ImagesReducer = (state = initState, action) => {
                 isBigImageOpen: false
             }
         case ADD_NEW_COMMENT:
+            action.comment.text = state.newCommentText;
             return {
                 ...state,
                 bigImage: {
                     ...state.bigImage,
-                    comments: [...state.bigImage.comments, action.comment]
-                }
+                    comments: [...state.bigImage.comments, action.comment],
+                },
+                newCommentText: "",
+                nameText: ""
             }
-        case NEW_COMMENT_TEXT_CHANGE: 
+        case NEW_COMMENT_TEXT_CHANGE:
             return {
                 ...state,
-                newCommentText: action.text
+                newCommentText: action.text,
+            }
+        case NAME_TEXT_CHANGE:
+            return {
+                ...state,
+                nameText: action.text
             }
         default:
             return state
@@ -66,6 +76,10 @@ export const addNewComment = comment => ({
 })
 export const newCommentTextChange = (text) => ({
     type: NEW_COMMENT_TEXT_CHANGE,
+    text
+})
+export const nameTextChange = (text) => ({
+    type: NAME_TEXT_CHANGE,
     text
 })
 

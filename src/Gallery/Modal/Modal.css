@@ -1,0 +1,81 @@
+.modal-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+  }
+.modal-item {
+  margin: auto;
+  width: 619px;
+  height: 425px;
+  background: #FFFFFF;
+  position: relative;
+}
+.modal-image  {
+  display: flex;
+  margin: 30px;
+}
+img{
+    width: 331px;
+    height: 205px;
+    background:#C4C4C4;
+  }
+.modal-comment {
+  margin-left: 14px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+.modal-comment .comment-date{
+  color: #999;
+  margin-bottom: 5px;
+}
+.modal-close {
+  cursor: pointer;
+  width: 25.46px;
+  width: 25.46px;
+}
+.modal-close::before, .modal-close::after {
+  content: "";
+  position: absolute;
+  width: 25.46px;
+  height: 0px;
+  right: 20px;
+  top: 20px;
+  border: 1px solid #000000;
+  transform: rotate(45deg);
+}
+.modal-close::after{
+  transform: rotate(-45deg);
+}
+.modal-newcoment {
+  margin: 29px;
+}
+.modal-newcoment input {
+  width: 332px;
+  height: 30px;
+  background: #FFF;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 3px; 
+  margin-bottom: 20px;
+  padding-left: 11px;
+}
+.modal-newcoment input::placeholder {
+  color: #CCC;
+}
+.modal-newcoment button {
+  width: 332px;
+  height: 30px;
+  background: #4997D0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #FFF;
+}
+.modal-newcoment button:disabled {
+  background-color: #999;
+  cursor: auto;
+}
